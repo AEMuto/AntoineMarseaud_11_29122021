@@ -1,0 +1,24 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(20px, 3vw, 40px);
+  padding-bottom: clamp(16px, 4.375vw, 63px);
+  padding-left: $padding-app;
+  padding-right: $padding-app;
+  &__logo {
+    width: clamp(145px, 14.583vw, 210px);
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__nav__link:nth-child(1) {
+    margin-right: clamp(10px, 4vw, 57px);
+  }
+
+}

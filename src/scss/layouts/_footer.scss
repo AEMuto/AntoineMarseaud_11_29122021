@@ -1,0 +1,24 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.footer {
+  display: flex;
+  min-height: 209px;
+  padding-left: $padding-app;
+  padding-right: $padding-app;
+  background-color: #000;
+  color: #FFF;
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+  }
+  &__logo {
+    width: 122px;
+    margin-bottom: 30px;
+  }
+  &__copyright {
+    font-size: clamp(12px, 1.667vw, 24px);
+  }
+}

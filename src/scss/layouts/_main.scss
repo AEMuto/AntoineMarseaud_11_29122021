@@ -1,0 +1,9 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
