@@ -7,3 +7,28 @@
   justify-content: space-between;
   min-height: 100vh;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 $padding-app;
+  min-height: 85vh;
+}
+
+.lodgings {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  @include responsive(md) {
+    padding: 50px;
+    margin: 40px 0px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px 60px;
+    border-radius: 25px;
+    background-color: $light-grey;
+  }
+  @include responsive(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

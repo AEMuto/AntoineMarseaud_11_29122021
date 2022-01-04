@@ -1,7 +1,11 @@
 // Couleurs
 $primary: #FF6060;
+$light-grey: #F6F6F6;
 
 // Layout
 $padding-app: max((100vw - 1240px) / 2, 2.667vw);
 
 // Breakpoints
+$sm: 425px;
+$md: 768px;
+$lg: 1024px;

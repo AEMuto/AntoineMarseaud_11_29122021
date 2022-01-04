@@ -3,6 +3,8 @@
 @use 'components/cards';
 @use 'components/dropdowns';
 @use 'components/tags';
-@use 'layouts/header';
+@use 'layouts/nav';
 @use 'layouts/main';
+@use 'layouts/header';
 @use 'layouts/footer';
+@use 'layouts/notfound';

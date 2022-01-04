@@ -1,0 +1,30 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  min-height: 85vh;
+  color: $primary;
+
+  h1 {
+    font-size: clamp(96px, 20vw, 288px);
+    margin-bottom: clamp(11px, 4.5vw, 66px);
+  }
+
+  h2 {
+    font-size: clamp(18px, 2.5vw, 36px);
+    font-weight: 500;
+    margin-bottom: clamp(133px, 12.639vw, 182px);
+  }
+
+  a {
+    font-size: clamp(14px, 1.25vw, 18px);
+  }
+
+}
