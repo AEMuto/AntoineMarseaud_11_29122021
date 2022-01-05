@@ -8,18 +8,10 @@ import NotFound from '../pages/NotFound';
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/about">
-        <About />
-      </Route>
-      <Route path="/lodging/:lodgingId">
-        <Lodging />
-      </Route>
-      <Route path="*">
-        <NotFound />
-      </Route>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/lodging/:lodgingId" component={Lodging} />
+      <Route path="*" component={NotFound} />
     </Switch>
   </BrowserRouter>
 );

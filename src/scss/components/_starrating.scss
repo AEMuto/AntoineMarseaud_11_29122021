@@ -1,0 +1,13 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.rating {
+  &__star {
+    &--off {
+      fill: $light-grey;
+    }
+    &--on {
+      fill: $primary;
+    }
+  }
+}

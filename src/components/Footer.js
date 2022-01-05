@@ -5,7 +5,10 @@ class Footer extends React.Component {
     return (
       <footer className="footer">
         <div className="footer__container">
-          <img className="footer__logo" src="./images/logo-white.svg" alt="logo" />
+          <img className="footer__logo"
+               src={this.props.lodging
+                 ? '../images/logo-white.svg'
+                 : './images/logo-white.svg'} alt="logo"/>
           <p className="footer__copyright">© 2020 Kasa. All rights reserved</p>
         </div>
       </footer>

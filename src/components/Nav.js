@@ -6,7 +6,9 @@ class Nav extends React.Component {
     return (
       <nav className="nav">
         <Link className="nav__logo" to="/">
-          <img src="./images/logo.svg" alt="logo" />
+          <img src={this.props.lodging
+            ? '../images/logo.svg'
+            : './images/logo.svg'} alt="logo"/>
         </Link>
         <div className="nav__links">
           <Link className="nav__link" to="/">Accueil</Link>

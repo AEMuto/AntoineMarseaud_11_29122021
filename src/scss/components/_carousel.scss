@@ -1,0 +1,9 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.carousel {
+  height: clamp(255px, 28.819vw, 415px);
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(10px, 1.736vw, 25px);
+}
