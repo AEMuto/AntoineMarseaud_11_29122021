@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../images/logo.svg';
 
 class Nav extends React.Component {
   render() {
     return (
       <nav className="nav">
         <Link className="nav__logo" to="/">
-          <img src={this.props.lodging
-            ? '../images/logo.svg'
-            : './images/logo.svg'} alt="logo"/>
+          <img src={logo} alt="logo"/>
         </Link>
         <div className="nav__links">
           <Link className="nav__link" to="/">Accueil</Link>

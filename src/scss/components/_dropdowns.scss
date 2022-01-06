@@ -1,2 +1,52 @@
 @use '../utils/variables' as *;
 @use '../utils/mixins' as *;
+
+.dropdown {
+  border-radius: clamp(5px, 0.694vw, 10px);
+  display: flex;
+  flex-direction: column;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(8px, 1.2vw, 16px) clamp(12px, 1.4vw, 20px);
+    border-radius: clamp(5px, 0.694vw, 10px);
+    cursor: pointer;
+    background-color: $primary;
+    color: #FFFFFF;
+    h3 {
+      font-size: clamp(13px, 1.250vw, 18px);
+      font-weight: 500;
+    }
+    img.chevron {
+      width: auto;
+      height: clamp(10px, 1.389vw, 20px);
+    }
+  }
+  &__content {
+    padding: clamp(18px, 2vw, 30px) clamp(12px, 1.389vw, 20px);
+    li, p {
+      font-size: clamp(12px, 1.25vw, 18px);
+      font-weight: 400;
+    }
+  }
+}
+
+.dropdown.close {
+  .dropdown__content {
+    display: none;
+  }
+  .chevron {
+    transform: rotate(0deg);
+  }
+}
+
+.dropdown.open {
+  background-color: $light-grey;
+  .dropdown__content {
+    display: block;
+  }
+  .chevron {
+    transform: rotate(180deg);
+  }
+}

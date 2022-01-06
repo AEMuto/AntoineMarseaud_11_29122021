@@ -2,7 +2,12 @@
 @use '../utils/mixins' as *;
 
 .rating {
+  display: flex;
+  justify-content: space-between;
+  width: clamp(96px, 13.75vw, 198px);
   &__star {
+    width: auto;
+    height: clamp(14px, 2.5vw, 30px);
     &--off {
       fill: $light-grey;
     }

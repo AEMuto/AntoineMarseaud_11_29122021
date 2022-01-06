@@ -5,10 +5,67 @@
   margin: clamp(15px, 2vw, 30px) 0;
   color: $primary;
   &__header {
-    h1, h2, li {font-weight: 500;}
-    h1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    @include responsive(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+    .title {
       font-size: clamp(18px, 2.5vw, 36px);
+      font-weight: 500;
+    }
+    .location {
+      margin-top: clamp(5px, 0.694vw, 10px);
+      font-size: clamp(14px, 1.25vw, 18px);
+      font-weight: 500;
+    }
+    .tags-wrapper {
+      display: flex;
+      margin-top: clamp(10px, 1.389vw, 20px);
+    }
+    .tag {
+      padding: 5px 15px;
+      margin-right: 10px;
+      border-radius: clamp(5px, 0.694vw, 10px);
+      font-size: clamp(10px, 0.972vw, 14px);
+      font-weight: 500;
+      color: #FFFFFF;
+      background-color: $primary;
+    }
+    &__rating {
+      display: flex;
+      margin-top: 16px;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      @include responsive(md) {
+        margin-top: 0;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .host-wrapper {
+        display: flex;
+        align-items: center;
+        text-align: right;
+        font-size: clamp(12px, 1.25vw, 18px);
+        .portrait {
+          height: clamp(32px, 4.444vw, 64px);
+          width: clamp(32px, 4.444vw, 64px);
+          margin-left: 10px;
+          border-radius: 50%;
+        }
+      }
     }
   }
-  &__dropdowns {}
+  &__dropdowns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    align-items: start;
+    margin-top: clamp(16px, 1.667vw, 24px);
+    @include responsive(md) {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 96px;
+    }
+  }
 }

@@ -3,7 +3,6 @@ import React from 'react';
 class StarRating extends React.Component {
   render() {
     let { rating } = this.props;
-    console.log(rating);
     return (
       <div className="rating">
         {[...Array(5)].map((star, index) => {

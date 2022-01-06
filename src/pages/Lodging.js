@@ -9,7 +9,7 @@ import Dropdown from '../components/Dropdown';
 class Lodging extends React.Component {
 
   render() {
-    console.log(this.props.location.state);
+
     const {
       description,
       equipments,
@@ -21,6 +21,9 @@ class Lodging extends React.Component {
       title
     } = this.props.location.state;
 
+    let { picture, name } = host;
+    name = name.split(/\s/);
+
     return (
       <Fragment>
         <Nav lodging={true}/>
@@ -29,17 +32,19 @@ class Lodging extends React.Component {
           <section className="lodging-data">
             <header className="lodging-data__header">
               <div className="lodging-data__header__info">
-                <h1>{title}</h1>
-                <h2>{location}</h2>
-                <ul>{tags.map((tag, index) => <li key={index}
-                                         className="tag">{tag}</li>)}</ul>
+                <h1 className="title">{title}</h1>
+                <h2 className="location">{location}</h2>
+                <ul className="tags-wrapper">
+                  {tags.map((tag, index) =>
+                  <li key={index} className="tag">{tag}</li>)}
+                </ul>
               </div>
               <div className="lodging-data__header__rating">
                 <div className="host-wrapper">
-                  <p>{host.name}</p>
-                  <img src={host.picture} alt="portrait"/>
+                  <p>{name[0]}<br/>{name[1]}</p>
+                  <img className="portrait" src={picture} alt="portrait"/>
                 </div>
-                <StarRating rating={rating} />
+                <StarRating rating={rating}/>
               </div>
             </header>
             <div className="lodging-data__dropdowns">
