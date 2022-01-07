@@ -1,0 +1,14 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.disclaimers {
+  flex: 1;
+  margin-top: clamp(16px, 2vw, 30px);
+  @include responsive(md) {
+    margin-right: clamp(0px, 7.5vw, 108px);
+    margin-left: clamp(0px, 7.5vw, 108px);
+  }
+  & > * {
+    margin-bottom: 20px;
+  }
+}

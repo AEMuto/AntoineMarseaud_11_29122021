@@ -2,12 +2,13 @@
 @use '../utils/mixins' as *;
 
 .header {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: clamp(111px, 15.486vw, 223px);
+  overflow: hidden;
   border-radius: clamp(10px, 1.736vw, 25px);
-  background-color: #757575;
   color: #FFFFFF;
   @include responsive(lg) {
     align-items: center;
@@ -20,5 +21,12 @@
     @include responsive(lg) {
       margin: 0;
     }
+  }
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    filter: brightness(75%);
   }
 }

@@ -7,19 +7,44 @@
   position: relative;
   overflow: hidden;
   border-radius: clamp(10px, 1.736vw, 25px);
-  img {
+  .slide {
+    display: none;
     object-fit: cover;
     width: 100%;
     height: auto;
+    &.current {
+      display: block;
+    }
   }
-  //img:nth-child(1) {
-  //  display: none;
-  //}
   &__controls {
     position: absolute;
     inset: 0;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 clamp(6px, 1.667vw, 24px);
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .arrow {
+      width: auto;
+      height: clamp(20px, 5.5vw, 80px);
+    }
+  }
+  &__index {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    @include responsive(md) {
+      display: block;
+    }
   }
 }

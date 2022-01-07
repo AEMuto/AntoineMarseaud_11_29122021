@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import LodgingCard from '../components/LodgingCard';
 
 import lodgings from '../lodgings';
+import backgroundHome from '../images/header-background-home.webp';
 
 class Home extends React.Component {
   state = {
@@ -17,8 +18,8 @@ class Home extends React.Component {
       <Fragment>
         <Nav />
         <div className="wrapper">
-          <Header title={headerTitle}/>
-          <section className="lodgings">
+          <Header title={headerTitle} image={backgroundHome}/>
+          <section className="gallery">
             {this.state.lodgings.map(lodging => {
               return (
                 <LodgingCard key={lodging.id} data={lodging} />
