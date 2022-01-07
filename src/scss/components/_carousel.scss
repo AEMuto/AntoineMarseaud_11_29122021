@@ -2,8 +2,24 @@
 @use '../utils/mixins' as *;
 
 .carousel {
+  display: flex;
   height: clamp(255px, 28.819vw, 415px);
   position: relative;
   overflow: hidden;
   border-radius: clamp(10px, 1.736vw, 25px);
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+  //img:nth-child(1) {
+  //  display: none;
+  //}
+  &__controls {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
