@@ -27,4 +27,8 @@
     margin-right: clamp(10px, 4vw, 57px);
   }
 
+  &__link.current {
+    text-decoration: underline;
+  }
+
 }

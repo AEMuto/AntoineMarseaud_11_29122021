@@ -18,9 +18,11 @@ class About extends React.Component {
 
   render() {
     const { reliability, respect, service, security } = this.state.data;
+    const { pathname } = this.props.location;
+
     return (
       <Fragment>
-        <Nav/>
+        <Nav location={pathname}/>
         <div className="wrapper">
           <Header image={backgroundAbout}/>
           <div className="disclaimers">
