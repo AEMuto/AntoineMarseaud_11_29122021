@@ -10,7 +10,7 @@
   overflow: hidden;
   border-radius: clamp(10px, 1.736vw, 25px);
   color: #FFFFFF;
-  @include responsive(lg) {
+  @include responsive(md) {
     align-items: center;
   }
   &__title {

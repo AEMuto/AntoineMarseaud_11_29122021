@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import chevronRight from '../images/chevron-carousel-right.svg';
 import chevronLeft from '../images/chevron-carousel-left.svg';
 
@@ -6,6 +6,27 @@ class Carousel extends React.Component {
   state = {
     quantity: 0,
     current: 1
+  }
+
+  renderControls = (pictureNumber) => {
+    const { current } = this.state;
+    if (pictureNumber > 1) {
+      return (
+        <Fragment>
+          <div className="carousel__controls">
+            <button onClick={this.prevSlide}>
+              <img className="arrow" src={chevronLeft} alt="left arrow"/>
+            </button>
+            <button onClick={this.nextSlide}>
+              <img className="arrow" src={chevronRight} alt="right arrow"/>
+            </button>
+          </div>
+          <p className="carousel__index">
+            {current}/{pictureNumber}
+          </p>
+        </Fragment>
+      )
+    }
   }
 
   nextSlide = () => {
@@ -45,17 +66,7 @@ class Carousel extends React.Component {
                       alt="Intérieur du logement"
                       className={index + 1 === current ? 'slide current' : 'slide'}/>
         })}
-        <div className="carousel__controls">
-          <button onClick={this.prevSlide}>
-            <img className="arrow" src={chevronLeft} alt="left arrow"/>
-          </button>
-          <button onClick={this.nextSlide}>
-            <img className="arrow" src={chevronRight} alt="right arrow"/>
-          </button>
-        </div>
-        <p className="carousel__index">
-          {current}/{pictures.length}
-        </p>
+        {this.renderControls(pictures.length)}
       </div>
     )
   }
