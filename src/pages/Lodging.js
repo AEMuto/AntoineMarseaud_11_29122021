@@ -5,26 +5,29 @@ import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
 import StarRating from '../components/StarRating';
 import Dropdown from '../components/Dropdown';
+import NotFound from './NotFound';
 
 class Lodging extends React.Component {
 
   render() {
 
-    const {
-      description,
-      equipments,
-      host,
-      location,
-      pictures,
-      rating,
-      tags,
-      title
-    } = this.props.location.state;
+    if (this.props.location.state) {
 
-    let { picture, name } = host;
-    name = name.split(/\s/);
+      const {
+        description,
+        equipments,
+        host,
+        location,
+        pictures,
+        rating,
+        tags,
+        title
+      } = this.props.location.state;
 
-    return (
+      let { picture, name } = host;
+      name = name.split(/\s/);
+
+      return (
       <Fragment>
         <Nav lodging={true}/>
         <div className="wrapper">
@@ -55,7 +58,9 @@ class Lodging extends React.Component {
         </div>
         <Footer lodging={true}/>
       </Fragment>
-    )
+    )}
+
+    return <NotFound error="Oups ! Aucun logement avec cet identifiant"/>
   }
 }
 
