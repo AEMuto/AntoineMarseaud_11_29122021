@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo.svg';
 
 class Nav extends React.Component {
   render() {
-    const { location } = this.props;
+    const { pathname } = this.props;
 
     return (
       <nav className="nav">
@@ -13,12 +14,12 @@ class Nav extends React.Component {
         </Link>
         <div>
           <Link
-            className={location === '/' ? 'nav__link current' : 'nav__link'}
+            className={pathname === '/' ? 'nav__link current' : 'nav__link'}
             to="/">
             Accueil
           </Link>
           <Link
-            className={location === '/about' ? 'nav__link current' : 'nav__link'}
+            className={pathname === '/about' ? 'nav__link current' : 'nav__link'}
             to="/about">
             À Propos
           </Link>
@@ -26,6 +27,10 @@ class Nav extends React.Component {
       </nav>
     )
   }
+}
+
+Nav.propTypes = {
+  pathname: PropTypes.string
 }
 
 export default Nav;

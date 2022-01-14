@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import LodgingCard from './LodgingCard';
 
 class Gallery extends React.Component {
@@ -12,6 +14,10 @@ class Gallery extends React.Component {
       </section>
     )
   }
+}
+
+Gallery.propTypes = {
+  lodgings: PropTypes.array
 }
 
 export default Gallery;

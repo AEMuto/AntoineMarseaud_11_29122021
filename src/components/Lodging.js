@@ -2,10 +2,10 @@ import React, { Fragment } from 'react';
 import Carousel from './Carousel';
 import StarRating from './StarRating';
 import Dropdown from './Dropdown';
+import PropTypes from 'prop-types';
 
 class Lodging extends React.Component {
   render() {
-
     const {
       description,
       equipments,
@@ -38,7 +38,7 @@ class Lodging extends React.Component {
                 <p>{name[0]}<br/>{name[1]}</p>
                 <img className="portrait" src={picture} alt="portrait"/>
               </div>
-              <StarRating rating={rating}/>
+              <StarRating rating={+rating}/>
             </div>
           </header>
           <div className="lodging-data__dropdowns">
@@ -49,6 +49,10 @@ class Lodging extends React.Component {
       </Fragment>
     )
   }
+}
+
+Lodging.propTypes = {
+  lodgingData: PropTypes.object
 }
 
 export default Lodging;

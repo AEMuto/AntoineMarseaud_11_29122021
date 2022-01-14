@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import Content from '../utils/Content';
 
-import conditionalRender from '../utils/conditionalRender';
 
 class LodgingPage extends React.Component {
 
@@ -14,9 +15,13 @@ class LodgingPage extends React.Component {
 
     return (
       <Fragment>
-        <Nav lodging={true}/>
+        <Nav/>
         <div className="wrapper">
-          {conditionalRender(isLoading, error, response, lodgings, id)}
+          <Content isLoading={isLoading}
+                   error={error}
+                   response={response}
+                   lodgings={lodgings}
+                   id={id}/>
         </div>
         <Footer/>
       </Fragment>
@@ -24,4 +29,13 @@ class LodgingPage extends React.Component {
   }
 }
 
+LodgingPage.propTypes = {
+  lodgings: PropTypes.array,
+  isLoading: PropTypes.bool,
+  response: PropTypes.object,
+  error: PropTypes.bool,
+  location: PropTypes.object
+}
+
 export default LodgingPage;
+

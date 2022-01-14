@@ -6,6 +6,7 @@ import About from '../pages/About'
 import NotFound from '../pages/NotFound';
 
 import wait from '../utils/wait';
+import ScrollToTop from '../utils/ScrollToTop';
 
 // Adresse où se trouve le fichier json des logements
 const URL = 'https://raw.githubusercontent.com/AEMuto/AntoineMarseaud_11_29122021/main/src/lodgings.json';
@@ -66,10 +67,13 @@ class Router extends React.Component {
     return (
       <BrowserRouter>
 
-        {/* Switch permet d'effectuer le rendu de la première <Route>
-        correspondante à l'emplacement du chemin 'path' indiqué.
-        */}
+        {/* https://v5.reactrouter.com/web/guides/scroll-restoration
+        Composant permettant de réinitialiser la position
+        du scroll à 0 lors de la navigation*/}
+        <ScrollToTop/>
 
+        {/* Switch permet d'effectuer le rendu de la première <Route>
+        correspondante à l'emplacement du chemin 'path' indiqué.*/}
         <Switch>
 
           {/* https://v5.reactrouter.com/web/api/Route/route-props
@@ -82,9 +86,7 @@ class Router extends React.Component {
           S'ils étaient de type fonctionnel, on pourrait utiliser
           les Hooks de react-router (cf: doc, ex: useLocation) pour récupérer
           ces props et effectuer le rendu de Route avec la forme
-          <Route path="/monchemin"><ComponentToRender/></Route>.
-          */}
-
+          <Route path="/monchemin"><ComponentToRender/></Route>.*/}
           <Route exact path="/"
                  render={(props) => {
                    return <Home {...props}
@@ -98,9 +100,7 @@ class Router extends React.Component {
 
           {/* Chemin récursif : On ne connait pas à l'avance l'ensemble des pages
           qui utiliseront ce chemin.
-          cf: https://v5.reactrouter.com/web/example/recursive-paths
-          */}
-
+          cf: https://v5.reactrouter.com/web/example/recursive-paths*/}
           <Route path="/lodging/:lodgingId"
                  render={(props) => {
                    return <LodgingPage {...props}
@@ -111,7 +111,6 @@ class Router extends React.Component {
                  }}/>
 
           {/* Tous les autres chemins renvoient vers la page 404 */}
-
           <Route path="*" component={NotFound}/>
 
         </Switch>

@@ -1,5 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
+/**
+ * Pour afficher le nombre d'étoiles correct, on crée un range de 5.
+ * Tant que rating est supérieur ou égal à 0 le svg ayant la forme
+ * d'une étoile à un fond rouge. Puis le reste a une couleur de fond grise.
+ */
 class StarRating extends React.Component {
   render() {
     let { rating } = this.props;
@@ -22,6 +28,10 @@ class StarRating extends React.Component {
       </div>
     );
   }
+}
+
+StarRating.propTypes = {
+  rating: PropTypes.number
 }
 
 export default StarRating;
