@@ -25,10 +25,10 @@ const Content = ({ isLoading, error, response, lodgings, id }) => {
   if (error) {
     return <Error response={response}/>
   }
-  if (lodgings && !id) {
+  if (lodgings.length > 0 && !id) {
     return <Gallery lodgings={lodgings}/>
   }
-  if (lodgings && id) {
+  if (lodgings.length > 0 && id) {
     // C'est grâce à la méthode d'array find que l'on sait si le logement existe
     const lodgingData = lodgings.find(lodging => lodging.id === id);
     // S'il n'est pas trouvé on fait le rendu d'un message d'erreur approprié
@@ -43,6 +43,7 @@ const Content = ({ isLoading, error, response, lodgings, id }) => {
     }
     return <Lodging lodgingData={lodgingData} />
   }
+  return <Loader/>
 }
 
 Content.propTypes = {
