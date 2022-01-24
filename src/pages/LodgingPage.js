@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
 import Content from '../utils/Content';
 
 
@@ -10,12 +8,10 @@ class LodgingPage extends React.Component {
 
   render() {
     const id = this.props.location.pathname.split('/lodging/')[1];
-
     const { lodgings, isLoading, response, error } = this.props;
 
     return (
       <Fragment>
-        <Nav/>
         <div className="wrapper">
           <Content isLoading={isLoading}
                    error={error}
@@ -23,7 +19,6 @@ class LodgingPage extends React.Component {
                    lodgings={lodgings}
                    id={id}/>
         </div>
-        <Footer/>
       </Fragment>
     )
   }

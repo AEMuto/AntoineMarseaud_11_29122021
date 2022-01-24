@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Dropdown from '../components/Dropdown';
 
@@ -20,11 +18,9 @@ class About extends React.Component {
 
   render() {
     const { reliability, respect, service, security } = this.state.data;
-    const { pathname } = this.props.location;
 
     return (
       <Fragment>
-        <Nav pathname={pathname}/>
         <div className="wrapper">
           <Header image={backgroundAbout}/>
           <div className="disclaimers">
@@ -34,7 +30,6 @@ class About extends React.Component {
             <Dropdown title="Sécurité" data={security}/>
           </div>
         </div>
-        <Footer/>
       </Fragment>
     )
   }

@@ -4,6 +4,8 @@ import Home from '../pages/Home';
 import LodgingPage from '../pages/LodgingPage';
 import About from '../pages/About'
 import NotFound from '../pages/NotFound';
+import Nav from './Nav';
+import Footer from './Footer';
 
 import wait from '../utils/wait';
 import ScrollToTop from '../utils/ScrollToTop';
@@ -71,7 +73,9 @@ class Router extends React.Component {
         Composant permettant de réinitialiser la position
         du scroll à 0 lors de la navigation*/}
         <ScrollToTop/>
-
+        {/* Les composants Nav et Footer sont render quelque-soit
+        la situation : on les place en dehors du Switch */}
+        <Nav/>
         {/* Switch permet d'effectuer le rendu de la première <Route>
         correspondante à l'emplacement du chemin 'path' indiqué.*/}
         <Switch>
@@ -114,6 +118,7 @@ class Router extends React.Component {
           <Route path="*" component={NotFound}/>
 
         </Switch>
+        <Footer/>
       </BrowserRouter>
     )
   }
